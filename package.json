@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxt/content": "latest",
+    "@nuxt/devtools": "npm:@nuxt/devtools-edge@latest",
+    "@nuxt/image": "^1.1.0",
+    "@nuxthq/studio": "^1.0.6",
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "nuxt": "^3.9.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.11.1",
+    "aos": "^2.3.4",
+    "nuxt-swiper": "^1.2.2",
+    "vanta": "^0.5.24"
+  }
+}
