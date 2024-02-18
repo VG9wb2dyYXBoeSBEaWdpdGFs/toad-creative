@@ -21,7 +21,7 @@
     <!-- Inner container -->
     <u-container>
       <!--Links container: Maybe unneccessary symantically as there are only 2 links,
-      one of which being a link back to '/' around the logo-->
+                                    one of which being a link back to '/' around the logo-->
       <nav class="flex w-full items-center py-6">
         <!-- Logo -->
         <nuxt-link class="flex items-center" to="/">
@@ -40,7 +40,14 @@
         <div class="flex-grow" />
 
         <!-- Contact button -->
-        <u-button to="/contact"> Get in touch</u-button>
+        <u-button
+          icon="i-heroicons-envelope"
+          size="lg"
+          color="black"
+          to="/contact"
+        >
+          Get in touch
+        </u-button>
       </nav>
     </u-container>
   </header>

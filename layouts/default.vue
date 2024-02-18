@@ -1,6 +1,6 @@
 <script setup>
 import AOS from "aos";
-import HALO from "vanta/dist/vanta.halo.min";
+import FOG from "vanta/dist/vanta.fog.min";
 
 const route = useRoute();
 const vanta = ref(null);
@@ -10,20 +10,19 @@ onMounted(() => {
   AOS.init();
 
   // Init background animation
-  vanta.value = HALO({
+  vanta.value = FOG({
     el: "#vanta",
-    mouseControls: false,
-    touchControls: false,
+    mouseControls: true,
+    touchControls: true,
     gyroControls: false,
     minHeight: 200.0,
     minWidth: 200.0,
-    backgroundAlpha: 0,
-    backgroundColor: 0x222222,
-    baseColor: 0xff41,
-    amplitudeFactor: 0.0,
-    xOffset: 0.3,
-    yOffset: 0.3,
-    size: 2.0,
+    highlightColor: 0x171717,
+    midtoneColor: 0x334a26,
+    lowlightColor: 0x171717,
+    baseColor: 0x171717,
+    blurFactor: 1,
+    speed: 4.0,
   });
 
   //  Disable right clicking on <img>
@@ -104,7 +103,7 @@ useHead({
     <div id="vanta" class="fixed top-0 bottom-0 right-0 left-0" />
 
     <!-- Div used to blur the animation behind it -->
-    <div class="z-10 backdrop-filter backdrop-blur-3xl bg-neutral-800/90">
+    <div class="z-10 backdrop-filter backdrop-blur-3xl bg-neutral-800/80">
       <t-nav />
       <main class="min-h-[calc(100vh-88px)]">
         <slot />
