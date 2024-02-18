@@ -1,4 +1,5 @@
 {
+  "name": "toad-creative",
   "private": true,
   "scripts": {
     "build": "nuxt build",
