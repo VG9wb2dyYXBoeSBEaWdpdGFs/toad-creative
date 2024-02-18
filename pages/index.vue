@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const route = useRoute();
 
+definePageMeta({
+  colorMode: "dark",
+});
+
 //Get all photos from /content/photography
 const { data: photography } = await useAsyncData(`content-all-photos`, () =>
   queryContent("/photography").find(),

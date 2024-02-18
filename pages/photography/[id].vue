@@ -5,6 +5,10 @@ import "swiper/css/pagination";
 
 const route = useRoute();
 
+definePageMeta({
+  colorMode: "dark",
+});
+
 //Get the set of photos according to the route path
 const { data } = await useAsyncData(`content-${route.path}`, () => {
   return queryContent().where({ _path: route.path }).findOne();

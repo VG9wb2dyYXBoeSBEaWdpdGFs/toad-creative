@@ -1,4 +1,8 @@
 <script setup>
+definePageMeta({
+  colorMode: "dark",
+});
+
 const details = [
   {
     title: "Email",
@@ -20,7 +24,7 @@ const details = [
 
 <template>
   <!-- TODO: Fix this needing to be set to calculated height.
-    A more correct and cleaner solution is possible. -->
+      A more correct and cleaner solution is possible. -->
   <div
     class="h-[calc(100vh-88px)] grid place-items-start sm:place-items-center"
   >
@@ -34,9 +38,9 @@ const details = [
       </h1>
 
       <!-- TODO: Fix the below HTML so the Days/Hours item.info isn't an <a>.
-            It is not a link but right now it's convenient & doesn't cause issues
-            other than being slightly confusing to the user if they clicked it for
-            some reason and being symantically incorrect. -->
+                  It is not a link but right now it's convenient & doesn't cause issues
+                  other than being slightly confusing to the user if they clicked it for
+                  some reason and being symantically incorrect. -->
 
       <!-- Contact info -->
       <div class="grid grid-cols-1 md:grid-cols-3">
