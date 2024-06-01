@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@nuxtjs/tailwindcss",
     "@nuxt/content",
-    "nuxt-swiper",
     "@nuxtjs/robots",
   ],
   robots: {

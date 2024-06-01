@@ -28,8 +28,8 @@ const { path, photoUrl } = defineProps<{
     </div>
 
     <!-- Photo -->
-    <nuxt-img
-      class="z-40 object-cover rounded-lg"
+    <NuxtImg
+      class="z-40 object-cover rounded-lg w-full"
       :src="photoUrl"
       alt="hello"
     />

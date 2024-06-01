@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const route = useRoute();
-
-definePageMeta({
-  colorMode: "dark",
+useSeoMeta({
+  name: "Home",
 });
+
+const route = useRoute();
 
 //Get all photos from /content/photography
 const { data: photography } = await useAsyncData(`content-all-photos`, () =>
@@ -17,42 +17,35 @@ const isPhotography = ref<boolean>(false);
 </script>
 
 <template>
-  <u-container>
+  <UContainer>
     <ULandingHero
+      :ui="{
+        title:
+          'min-h-20 !bg-clip-text !text-transparent !bg-gradient-to-r !from-frogger-500 via-frogger-400  !to-frogger-300 h-max',
+        description: 'max-w-3xl mx-auto',
+      }"
       title="Photography Pro & AI Artist"
       description=" Explore the realm of AI-powered art generation and photography as we unveil a mesmerizing fusion of creativity and digital precision. "
       links=""
     >
       <template #headline>
         <UBadge
-          color="gray"
-          variant="subtle"
+          color="primary"
+          variant="soft"
           size="lg"
           class="relative rounded-full font-semibold"
         >
-          <NuxtLink
-            to="/"
-            target="_blank"
-            class="focus:outline-none"
-            tabindex="-1"
-          >
-            <span class="absolute inset-0" aria-hidden="true" />
-          </NuxtLink>
+          <UIcon class="mr-2 size-4" name="i-heroicons-map-pin" dynamic />
 
           Based in College Station, TX
         </UBadge>
       </template>
-      <nuxt-img
-        src="/uploads/fire-girl.jpg"
-        class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
-      />
     </ULandingHero>
-  </u-container>
-
-  <!-- Photo section -->
-  <u-container>
+  </UContainer>
+  <UPage>
+    <!-- Photo section -->
     <div class="flex items-center justify-center mb-12">
-      <u-pricing-toggle
+      <UPricingToggle
         left="AI Art"
         right="Photography"
         v-model="isPhotography"
@@ -65,24 +58,24 @@ const isPhotography = ref<boolean>(false);
       data-aos-duration="700"
       data-aos-offset="1"
       id="work"
-      class="max-width gap-0 columns-1 sm:columns-2 md:columns-3 gap-6"
+      class="max-width gap-0 columns-1 sm:columns-2 md:columns-3 gap-6 px-4"
     >
       <!-- Photo container -->
 
-      <t-photo
+      <TPhoto
         v-if="isPhotography"
         v-for="(p, i) in photography"
         :path="p._path"
         :photo-url="p.photos[0]"
         ::key="i"
-      ></t-photo>
-      <t-photo
+      ></TPhoto>
+      <TPhoto
         v-else
         v-for="(a, i) in aiArt"
         :path="a._path"
         :photo-url="a.photos[0]"
         ::key="i"
-      ></t-photo>
+      ></TPhoto>
     </div>
-  </u-container>
+  </UPage>
 </template>
