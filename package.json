@@ -2,9 +2,9 @@
   "name": "toad-creative",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "tinacms build && nuxt build",
     "dev": "tinacms dev -c 'nuxt dev --host'",
-    "generate": "nuxt generate",
+    "generate": "tinacms build && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
