@@ -6,7 +6,7 @@ const { path, photoUrl } = defineProps<{
 </script>
 
 <template>
-  <nuxt-link class="block relative mb-6" :to="path">
+  <NuxtLink class="block relative mb-6" :to="path">
     <!-- Blur overlay when hovering -->
     <div
       class="group grid place-items-center hover:bg-neutral-900/20 z-50 hover:backdrop-blur-xl absolute top-0 bottom-0 right-0 left-0 rounded-lg transition"
@@ -33,5 +33,5 @@ const { path, photoUrl } = defineProps<{
       :src="photoUrl"
       alt="hello"
     />
-  </nuxt-link>
+  </NuxtLink>
 </template>

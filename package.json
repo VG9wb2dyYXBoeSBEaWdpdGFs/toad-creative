@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "tinacms dev -c 'nuxt dev --host'",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/content": "latest",
@@ -13,6 +14,7 @@
     "@nuxt/image": "^1.1.0",
     "@nuxthq/studio": "^1.0.6",
     "@nuxtjs/tailwindcss": "^6.10.1",
+    "@tinacms/cli": "^1.5.39",
     "nuxt": "^3.11.2",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9"
@@ -22,6 +24,7 @@
     "@nuxt/ui-pro": "1.1.0",
     "@nuxtjs/robots": "^3.0.0",
     "aos": "^2.3.4",
+    "tinacms": "^1.6.3",
     "vanta": "^0.5.24"
   }
 }
